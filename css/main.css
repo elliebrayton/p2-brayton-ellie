@@ -1,0 +1,47 @@
+html{
+    font-size: 62.5%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background: #704c5e;
+    min-height: 10rem;
+}
+
+#hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.line {
+    width: 4rem;
+    height: 4px;
+    background: white;
+    margin: 8px;
+}
+
+.active .line:nth-child(2){
+    opacity: 0;
+}
+
+.active .line:nth-child(1){
+    transform: translateY(14px) rotate(45deg);
+    
+}
+
+.active .line:nth-child(3){
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+#menu{
+    display: none;
+}
+
+#menu.show{
+    display: block;
+}
