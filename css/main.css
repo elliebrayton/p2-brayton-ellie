@@ -21,8 +21,8 @@ html{
 }
 
 .line {
-    width: 4rem;
-    height: 4px;
+    width: 3.5rem;
+    height: 3px;
     background: white;
     margin: 8px;
     transition: all 0.3s ease-in-out;
@@ -33,7 +33,7 @@ html{
 }
 
 .active .line:nth-child(1){
-    transform: translateY(14px) rotate(45deg);
+    transform: translateY(12px) rotate(45deg);
 }
 
 .active .line:nth-child(3){
