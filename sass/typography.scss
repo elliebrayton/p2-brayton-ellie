@@ -2,30 +2,58 @@ body{
     color: $primary-black;
 }
 h1{
-    font: normal 400 3.5rem $font-family-secondary;
+    font: normal 400 3.3rem $font-family-secondary;
     color: $tertiary-color;
 }
 
 .section{
-    background: $sprimary-color;
+    background: $primary-color;
     .display{
-        font: normal 600 2.5rem $font-family-primary;
+        font: normal 600 2.2rem $font-family-primary;
         color: white;
     }
     p{
-        font: normal 400 1.5rem $font-family-primary;
+        font: normal 400 1.4rem $font-family-primary;
+        line-height: 140%;
+        padding: 2rem 0;
     }
     &--one{
         span{
-            font: normal 400 3rem $font-family-secondary;
+            font: normal 400 2.6rem $font-family-secondary;
+            padding: 0 5px;
         }
     }
     &--two{
+        background:$primary-black;
         .display{
             display: inline-block;
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 7rem;
+                background: white;
+                height: 2px;
+            }
+        }
+        p{
+            color: white;
         }
         span{
             color: $secondary-color;
+        }
+    }
+    &--three{
+        .h2{
+        display: inline-block;
+        background: $primary-black;
+        width: 100%;
+        color: $tertiary-color;
+        font: normal 400 2.6rem $font-family-secondary;
+        text-align: center;
+        padding-bottom: 1.5rem;
         }
     }
 }

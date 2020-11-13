@@ -4,6 +4,10 @@
 @import "utilities";
 @import "base";
 
+a{
+    text-decoration: none;
+}
+
 //HEADER
 .header{
     background: #704c5e;
@@ -97,6 +101,46 @@
 
 
 //SECTIONS
+.section{
+    padding: 5%;
+    &--one{
+        background: linear-gradient(rgba(112, 76, 94, 0.66), rgba(112, 76, 94, 0.66)), url(../images/hero_image_mobile.jpg);
+        min-height: 30rem;
+        background-size: cover;
+        a:link,
+        a:visited{
+            display: inline-block;
+            background: $secondary-color;
+            font: normal 400 1.8rem monarcha, sans-serif;
+            border: none;
+            color: white;
+            margin: 5% 0; 
+            text-align: center;
+            width: 13rem;
+            padding: 1.3rem;
+            &:hover{
+                background: white;
+                color: $secondary-color;
+                transition: .4s ease-in-out;
+            }
+        }
+    }
+    &--two{
+
+    }
+    &--three{
+        padding: unset;
+        background: white;
+        .arrow-down{
+            width: 0; 
+            height: 0; 
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-top: 30px solid $primary-black;
+            margin: 0 auto;
+        }
+    }
+}
 
 
 @media(min-width: 770px){

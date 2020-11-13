@@ -2,22 +2,46 @@ body {
   color: #565656; }
 
 h1 {
-  font: normal 400 3.5rem lemongrass-script, sans-serif;
+  font: normal 400 3.3rem lemongrass-script, sans-serif;
   color: #c6eaf9; }
 
 .section {
-  background: #e591bd; }
+  background: #704c5e; }
   .section .display {
-    font: normal 600 2.5rem monarcha, sans-serif;
+    font: normal 600 2.2rem monarcha, sans-serif;
     color: white; }
   .section p {
-    font: normal 400 1.5rem monarcha, sans-serif; }
+    font: normal 400 1.4rem monarcha, sans-serif;
+    line-height: 140%;
+    padding: 2rem 0; }
   .section--one span {
-    font: normal 400 3rem lemongrass-script, sans-serif; }
-  .section--two .display {
-    display: inline-block; }
-  .section--two span {
-    color: #e591bd; }
+    font: normal 400 2.6rem lemongrass-script, sans-serif;
+    padding: 0 5px; }
+  .section--two {
+    background: #565656; }
+    .section--two .display {
+      display: inline-block;
+      position: relative; }
+      .section--two .display::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 7rem;
+        background: white;
+        height: 2px; }
+    .section--two p {
+      color: white; }
+    .section--two span {
+      color: #e591bd; }
+  .section--three .h2 {
+    display: inline-block;
+    background: #565656;
+    width: 100%;
+    color: #c6eaf9;
+    font: normal 400 2.6rem lemongrass-script, sans-serif;
+    text-align: center;
+    padding-bottom: 1.5rem; }
 
 @media (min-width: 382px) {
   .section--one .text-wrap {
@@ -29,6 +53,9 @@ html {
 * {
   margin: 0;
   padding: 0; }
+
+a {
+  text-decoration: none; }
 
 .header {
   background: #704c5e;
@@ -102,6 +129,39 @@ html {
   width: 50px;
   height: 50px;
   background: white; }
+
+.section {
+  padding: 5%; }
+  .section--one {
+    background: linear-gradient(rgba(112, 76, 94, 0.66), rgba(112, 76, 94, 0.66)), url(../images/hero_image_mobile.jpg);
+    min-height: 30rem;
+    background-size: cover; }
+    .section--one a:link,
+    .section--one a:visited {
+      display: inline-block;
+      background: #e591bd;
+      font: normal 400 1.8rem monarcha, sans-serif;
+      border: none;
+      color: white;
+      margin: 5% 0;
+      text-align: center;
+      width: 13rem;
+      padding: 1.3rem; }
+      .section--one a:link:hover,
+      .section--one a:visited:hover {
+        background: white;
+        color: #e591bd;
+        transition: .4s ease-in-out; }
+  .section--three {
+    padding: unset;
+    background: white; }
+    .section--three .arrow-down {
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-top: 30px solid #565656;
+      margin: 0 auto; }
 
 @media (min-width: 770px) {
   .mobile-navigation {
