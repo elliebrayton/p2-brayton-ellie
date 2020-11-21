@@ -8,10 +8,13 @@ a{
     text-decoration: none;
 }
 
+
+
 //HEADER
 .header{
     background: #704c5e;
-    min-height: 10rem;
+    min-height: 5rem;
+    padding-bottom: 2rem;
 }
 
 //HAMBURGER
@@ -66,6 +69,8 @@ a{
     flex-direction: column;
     list-style-type: none;
     padding: 7rem 0;
+    z-index: 2;
+
 }
 
 #menu ul li a:link,
@@ -76,8 +81,9 @@ a{
     padding: 10px 0;
     padding-left: 20%;
     text-decoration: none;
-    font: 400 normal 20px 'monarcha';
+    font: 400 normal 2rem 'monarcha';
     color: white;
+    z-index: 1;
 }
 
 #menu ul li a:hover{
@@ -90,11 +96,15 @@ a{
     display: none;
 }
 
+.mobile-navigation{
+    z-index: 1;
+}
+
 //LOGO
 .logo{
-    width: 50px;
-    height: 50px;
-    background: white;
+    img{
+        max-width: 100%;
+    }
 }
 
 //MAIN
@@ -109,24 +119,8 @@ a{
         background-size: cover;
         a:link,
         a:visited{
-            display: inline-block;
-            background: $secondary-color;
-            font: normal 400 1.8rem monarcha, sans-serif;
-            border: none;
-            color: white;
-            margin: 5% 0; 
-            text-align: center;
-            width: 13rem;
-            padding: 1.3rem;
-            &:hover{
-                background: white;
-                color: $secondary-color;
-                transition: .4s ease-in-out;
-            }
+            @include button;
         }
-    }
-    &--two{
-
     }
     &--three{
         padding: unset;
@@ -139,13 +133,129 @@ a{
             border-top: 30px solid $primary-black;
             margin: 0 auto;
         }
+        .featured_wrapper{
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            &--item{
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding: 4rem 0 1rem;
+                &:not(:last-child){
+                    border-bottom: 1px solid $primary-black;
+                }
+                a:link,
+                a:visited{
+                    @include button;
+                    font: normal 400 1.5rem monarcha, sans-serif;
+                    border: 1px solid $secondary-color;
+                    padding: 1rem;
+                    margin-bottom: 2rem;
+                }
+                
+            }
+        }
+        img{
+            max-width: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+    }
+}
+
+//FOOTER
+
+.footer{
+    background: $primary-black;
+    color: white;
+    font: normal 400 1.4rem $font-family-primary;
+    text-align: center;
+    padding: 3rem;
+    ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1rem;
+        font: normal 400 1.4rem $font-family-primary;
+        li{
+            list-style-type: none;
+            color: white;
+            padding: 1rem 0;
+            a:link,
+            a:visited{
+                color: white;
+                &:hover{
+                    color: $tertiary-color;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 408px){
+    .section{
+        &--one{
+            padding: 5%;
+            .heading-wrap{
+                max-width: 40rem;
+            }
+            .text-wrap{
+                max-width: 44rem;
+            }
+        }
+        &--three{
+            .featured_wrapper {
+                display: flex;
+                flex-direction: column;
+                max-width: 28rem;
+                margin: 0 auto;
+                align-items: center;
+            }
+        }
+    }   
+}
+
+@media(min-width: 620px){
+    .section{
+        &--one{
+            .heading-wrap{
+                max-width: 100%;
+            }
+            .text-wrap{
+                max-width: 100%;
+            }
+        }
+    }
+    .footer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        ul{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            li{
+                &:not(:last-child){
+                    padding-right: 3rem;
+                }
+            }
+        }
     }
 }
 
 
 @media(min-width: 770px){
+    .header{
+        padding: .5rem;
+    }
     .mobile-navigation{
         display: none;
+    }
+
+    .logo{
+        position: static;
     }
 
     .desktop-navigation{
@@ -156,19 +266,75 @@ a{
             display: flex;
             flex-direction: row;
             list-style-type: none;
-            padding-top: 2rem;
+            padding-top: 1rem;
             a:link,
             a:visited,
             a:active{
                 color: white;
                 text-decoration: none;
-                font: 400 normal 20px 'monarcha';
+                font: 400 normal 1.5rem 'monarcha';
+                &:hover{
+                    color: $tertiary-color;
+                }
             }
 
             li{
                 &:not(:last-child){
                     padding-right: 3rem;
                 }
+            }
+        }
+    }
+}
+
+@media(min-width: 836px){
+    .section{
+        &--two{
+            .section-wrap{
+                max-width: 80rem;
+                margin: 0 auto;
+                display: flex;
+                .display{
+                    padding-right: 5%;
+                    flex: 45% 0 0;
+                }
+            }
+        }
+        &--three{
+            .featured_wrapper{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                max-width: 80rem;
+                padding: 2%;
+                &--item{
+                    max-width: 20rem;
+                    border-bottom: none;
+                    &:not(:last-child){
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 960px){
+    .section{
+        &--one{
+            .heading-wrap{
+                margin: 0 auto;
+                text-align: center;
+            }
+            .text-wrap{
+                max-width: 80rem;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            a:link,
+            a:visited{
+                margin-top: 3rem;
             }
         }
     }
