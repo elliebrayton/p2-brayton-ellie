@@ -126,6 +126,7 @@ a{
         overflow: auto; 
         .modal_content{
             background-color: white;
+            border: solid 1px $secondary-color;
             margin: auto;
             padding: 2rem;
             width: 70%;

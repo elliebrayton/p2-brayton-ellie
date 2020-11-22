@@ -215,6 +215,7 @@ a {
     overflow: auto; }
     .main .modal .modal_content {
       background-color: white;
+      border: solid 1px #e591bd;
       margin: auto;
       padding: 2rem;
       width: 70%; }
