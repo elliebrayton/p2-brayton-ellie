@@ -30,30 +30,26 @@ for (i = 0; i < accordion.length; i++) {
   });
 }
 
-//MODAL
-// Get the modal
-var modal = document.getElementById("myModal");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+//API 
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var apiResult = JSON.parse(this.responseText);
 
+        //Code Dealing With The API Data Goes Here
 
-window.addEventListener("load",
-  function() {
-    setTimeout(showPopup, 1500);
-  });
+        //variables for the quote
+        var quote = document.createTextNode(apiResult.content);
+        var author = document.createTextNode(apiResult.author);
 
-function showPopup() {
-  document.getElementById("myModal").style.opacity = 1;
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+        //add quote information
+        var quotes = document.querySelectorAll('#quote_wrapper p span');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+        quotes[0].appendChild(quote);
+        quotes[1].appendChild(author);
+
+    }
+};
+xmlhttp.open('GET', 'https://api.quotable.io/random', true);
+xmlhttp.send();
