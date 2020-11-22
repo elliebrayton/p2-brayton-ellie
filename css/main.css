@@ -253,6 +253,29 @@ a {
     display: flex;
     flex-direction: column;
     padding: 5%; }
+    .article section .text_wrapper {
+      display: flex;
+      flex-direction: column; }
+      .article section .text_wrapper a:link,
+      .article section .text_wrapper a:visited {
+        display: block;
+        background: #e591bd;
+        font: normal 400 1.8rem monarcha, sans-serif;
+        border: none;
+        color: white;
+        margin: auto;
+        text-align: center;
+        width: 13rem;
+        padding: 1.3rem;
+        width: 20rem;
+        margin: 2rem 0;
+        font-size: 1.4rem;
+        border: 1px solid #e591bd; }
+        .article section .text_wrapper a:link:hover,
+        .article section .text_wrapper a:visited:hover {
+          background: white;
+          color: #e591bd;
+          transition: .4s ease-in-out; }
     .article section .img_wrapper img {
       max-width: 100%; }
     .article section #quote_wrapper p {

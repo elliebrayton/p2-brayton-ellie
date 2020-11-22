@@ -1,7 +1,6 @@
 @import "mixins";
 @import "variables";
 @import "typography";
-@import "utilities";
 @import "base";
 
 a{
@@ -161,7 +160,16 @@ a{
         flex-direction: column;
         padding: 5%;
         .text_wrapper{
-
+            display: flex;
+            flex-direction: column;
+            a:link,
+            a:visited{
+                 @include button;
+                 width: 20rem;
+                 margin: 2rem 0;
+                 font-size: 1.4rem;
+                 border: 1px solid $secondary-color;
+            }
         }
         .img_wrapper{
             img{
