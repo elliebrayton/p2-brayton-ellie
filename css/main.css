@@ -203,6 +203,47 @@ a {
 .main {
   flex: 1;
   padding-bottom: 10rem; }
+  .main .modal {
+    position: fixed;
+    z-index: 99;
+    padding-top: 100px;
+    left: 0;
+    top: 15%;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; }
+    .main .modal .modal_content {
+      background-color: white;
+      margin: auto;
+      padding: 2rem;
+      width: 70%; }
+      .main .modal .modal_content a:link,
+      .main .modal .modal_content a:visited {
+        display: block;
+        background: #e591bd;
+        font: normal 400 1.8rem monarcha, sans-serif;
+        border: none;
+        color: white;
+        margin: auto;
+        text-align: center;
+        width: 13rem;
+        padding: 1.3rem;
+        border: 1px solid #e591bd; }
+        .main .modal .modal_content a:link:hover,
+        .main .modal .modal_content a:visited:hover {
+          background: white;
+          color: #e591bd;
+          transition: .4s ease-in-out; }
+      .main .modal .modal_content .close {
+        color: #e591bd;
+        float: right;
+        font-size: 28px;
+        font-weight: bold; }
+        .main .modal .modal_content .close:hover {
+          color: #565656;
+          text-decoration: none;
+          cursor: pointer; }
 
 .article {
   max-width: 80rem;
@@ -337,6 +378,8 @@ a {
           color: #c6eaf9; }
 
 @media (min-width: 408px) {
+  .main .modal .modal_content {
+    width: 75%; }
   .section--one {
     padding: 5%; }
     .section--one .heading-wrap {
@@ -351,6 +394,10 @@ a {
     align-items: center; } }
 
 @media (min-width: 620px) {
+  .main .modal {
+    top: 25%; }
+    .main .modal .modal_content {
+      width: 50rem; }
   .article section .img_wrapper {
     width: 70%;
     margin: 0 auto; }
